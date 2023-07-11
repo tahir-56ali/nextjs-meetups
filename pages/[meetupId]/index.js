@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, // false means all supported path, true means NextJS
+    fallback: "blocking", // false means all supported path, true means NextJS
     // would try to generate a page for provided meetup ID dynamically on the server
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
